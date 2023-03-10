@@ -1,10 +1,11 @@
 import { defineStore } from "pinia";
 import { uuid } from "vue-uuid";
+import { useLocalStorage } from "@vueuse/core"
 
 export const useFolderStore = defineStore('folder', {
     state() {
         return {
-            structure: [
+            structure: useLocalStorage('folder-structure', [
                 {
                     'id': uuid.v4(),
                     'name': 'D1',
@@ -38,7 +39,7 @@ export const useFolderStore = defineStore('folder', {
                         }
                     ],
                 }
-            ]
+            ])
         }
     },
 

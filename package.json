@@ -17,6 +17,7 @@
         "vue": "^3.2.41"
     },
     "dependencies": {
+        "@vueuse/core": "^9.13.0",
         "pinia": "^2.0.33",
         "vue-uuid": "^3.0.0"
     }
