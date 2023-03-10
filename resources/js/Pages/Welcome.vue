@@ -30,6 +30,7 @@ function submit() {
                 <div>
                     <form class="max-w-fit mx-auto " @submit.prevent="submit">
                         <div>
+                            <button class="rounded-md bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 -ml-11">Add New Row</button>
                             <FolderList :list="store.structure"/>
                         </div>
                         <button class="bg-lime-600 flex w-fit mx-auto cursor-pointer mt-10 text-xl  hover:bg-lime-800 text-white px-10 py-2 font-semibold rounded-md" type="submit">
