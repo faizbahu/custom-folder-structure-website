@@ -35,22 +35,15 @@ function addChild() {
             </div>
             <div class="flex">
             <button type="button" @click="addChild(item)">
-                <!-- <svg class="w-8 h-8  ml-2 text-blue-700 hover:bg-blue-800 hover:text-white hover:rounded-full" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg> -->
                 <svg class="rounded-full ml-3 border-2 border-blue-700 w-6 h6 text-blue-700 hover:bg-blue-800 hover:text-white hover:rounded-full" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                 </svg>
 
             </button>
             <button>
-                <!-- <svg class="w-8 h-8  ml-2 text-red-600 hover:bg-red-700 hover:text-white hover:rounded-full"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg> -->
                 <svg class="border-2 ml-3 rounded-full border-red-600 w-6 h-6 text-red-600 hover:bg-red-700 hover:text-white hover:rounded-full" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
                 </svg>
-
             </button>
             </div>
         </div>

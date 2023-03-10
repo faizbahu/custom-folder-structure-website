@@ -32,7 +32,7 @@ function submit() {
                         <div>
                             <FolderList :list="store.structure"/>
                         </div>
-                        <button class="w-fit mx-auto cursor-pointer mt-10 text-xl bg-red-500 hover:bg-red-700 text-white px-10 py-2 font-semibold rounded-md" type="submit">
+                        <button class="bg-lime-600 flex w-fit mx-auto cursor-pointer mt-10 text-xl  hover:bg-lime-800 text-white px-10 py-2 font-semibold rounded-md" type="submit">
                             SAVE
                         </button>
                     </form>
