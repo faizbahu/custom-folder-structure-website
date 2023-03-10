@@ -3,11 +3,20 @@ import { Head, router } from '@inertiajs/vue3';
 import { useFolderStore } from "@/Stores/Folder";
 import FolderList from "@/Components/FolderList.vue";
 import DefaultLayout from "@/Layouts/DefaultLayout.vue";
+import { watch } from "vue";
 
 let store = useFolderStore()
 
+watch(
+    store,
+    (state) => {
+        localStorage.setItem("folder-structure", JSON.stringify(state.structure));
+    },
+    {deep: true}
+);
+
 function submit() {
-    router.post(route('home'), {structure: store.structure})
+    router.post(route('generate'), {structure: store.structure})
 }
 </script>
 
@@ -19,7 +28,7 @@ function submit() {
                 <h1 class="text-center text-5xl font-bold mb-10">
                     Create Your Own Custom Structure </h1>
                 <div>
-                    <form @submit.prevent="submit" class="max-w-fit mx-auto ">
+                    <form class="max-w-fit mx-auto " @submit.prevent="submit">
                         <div>
                             <FolderList :list="store.structure"/>
                         </div>
