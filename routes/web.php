@@ -3,7 +3,6 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use Spatie\ArrayToXml\ArrayToXml;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +16,7 @@ use Spatie\ArrayToXml\ArrayToXml;
 */
 
 Route::get('/', [\App\Http\Controllers\StructureController::class, 'index'])->name('home');
-
 Route::post('/', [\App\Http\Controllers\StructureController::class, 'store'])->name('generate');
-
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

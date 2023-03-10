@@ -17,6 +17,8 @@ function addChild() {
         'permission': '',
         children: []
     })
+
+    store = useFolderStore()
 }
 </script>
 

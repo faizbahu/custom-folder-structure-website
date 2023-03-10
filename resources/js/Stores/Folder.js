@@ -1,45 +1,50 @@
 import { defineStore } from "pinia";
 import { uuid } from "vue-uuid";
-import { useLocalStorage } from "@vueuse/core"
 
 export const useFolderStore = defineStore('folder', {
     state() {
+        let structure = [
+            {
+                id: uuid.v4(),
+                name: 'D1',
+                permission: '',
+                children: [
+                    {
+                        id: uuid.v4(),
+                        name: 'D11',
+                        permission: '',
+                        children: [
+                            {
+                                id: uuid.v4(),
+                                name: 'D111',
+                                permission: '',
+                                'children': []
+                            }
+                        ]
+                    }
+                ],
+            },
+            {
+                id: uuid.v4(),
+                name: 'D2',
+                permission: '',
+                children: [
+                    {
+                        id: uuid.v4(),
+                        name: 'D22',
+                        permission: '',
+                        children: []
+                    }
+                ],
+            }
+        ];
+
+        if (localStorage.getItem("folder-structure")) {
+            structure = JSON.parse(localStorage.getItem("folder-structure"));
+        }
+
         return {
-            structure: useLocalStorage('folder-structure', [
-                {
-                    'id': uuid.v4(),
-                    'name': 'D1',
-                    'permission': '',
-                    children: [
-                        {
-                            'id': uuid.v4(),
-                            'name': 'D11',
-                            'permission': '',
-                            children: [
-                                {
-                                    'id': uuid.v4(),
-                                    'name': 'D111',
-                                    'permission': '',
-                                    'children': []
-                                }
-                            ]
-                        }
-                    ],
-                },
-                {
-                    'id': uuid.v4(),
-                    'name': 'D2',
-                    'permission': '',
-                    children: [
-                        {
-                            'id': uuid.v4(),
-                            'name': 'D22',
-                            'permission': '',
-                            children: []
-                        }
-                    ],
-                }
-            ])
+            structure
         }
     },
 
