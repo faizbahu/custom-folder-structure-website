@@ -7,7 +7,7 @@ import DefaultLayout from "@/Layouts/DefaultLayout.vue";
 let store = useFolderStore()
 
 function submit() {
-    router.post(route('home'), {structure: store.structure})
+    router.post(route('generate'), {structure: store.structure})
 }
 </script>
 

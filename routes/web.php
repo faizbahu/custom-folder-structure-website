@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Spatie\ArrayToXml\ArrayToXml;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,13 +16,10 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Welcome');
-})->name('home');
+Route::get('/', [\App\Http\Controllers\StructureController::class, 'index'])->name('home');
 
-Route::post('/', function (\Illuminate\Http\Request $request) {
-    dd($request->all());
-});
+Route::post('/', [\App\Http\Controllers\StructureController::class, 'store'])->name('generate');
+
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
